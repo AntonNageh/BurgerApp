@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import CartItems from "../Cart/CartItems";
 import Total from "../Cart/Total";
 import { div } from "framer-motion/m";
-const Cart = () => {
+const Cart = ({setShowAuthModal}) => {
   const [cart, setCart] = useState([]);
   const removeFromCart = (id) => {
     const updatedCart = cart.filter((i) => i["id"] != id);
@@ -62,8 +62,8 @@ const Cart = () => {
           );
         })}
         </div>
+      <Total finalPrice={total} setShowAuthModal={setShowAuthModal}></Total>
       </div>
-      <Total finalPrice={total}></Total>
     </div>
   );
 };

@@ -4,11 +4,11 @@ import Navbar from "../Navbar/Navbar";
 import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
 
-export default function Layout() {
+export default function Layout({onAuthClick}) {
   return (
     <>
       
-        <Navbar />
+        <Navbar onAuthClick={onAuthClick} />
         <div className="">
           <Outlet />
         </div>

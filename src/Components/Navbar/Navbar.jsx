@@ -1,8 +1,9 @@
+import { SignedIn, SignedOut, UserButton } from "@clerk/clerk-react";
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 
-export default function Navbar() {
+export default function Navbar({onAuthClick }) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
@@ -42,11 +43,12 @@ export default function Navbar() {
               Home
             </NavLink>
           </li>
-           <li>
+          <li>
             <NavLink to="/orders" className={navLinkClass} onClick={() => setIsOpen(false)}>
               Menu
             </NavLink>
           </li>
+          
           <li>
             <NavLink
               to="/customizedorder"
@@ -60,6 +62,37 @@ export default function Navbar() {
             <NavLink to="/cart" className={navLinkClass} onClick={() => setIsOpen(false)}>
               <i className="fa-solid fa-cart-shopping"></i>
             </NavLink>
+          </li>
+          <li>
+             <div className="flex items-center space-x-4">
+              <SignedOut>
+                <button
+                  className={"bg-[#151515] text-[#fbfada] border border-[#fbfada] rounded-full px-4 py-2 hover:bg-[#fbfada] hover:text-[#151515] transition-all duration-300"}
+                    onClick={() => 
+                    {
+                      onAuthClick('signin'),
+                      setIsOpen(false)
+                    }
+                    }>
+                  Sign In
+                </button>
+                <button
+                  onClick={() => 
+                    {
+                      onAuthClick('signup'),
+                      setIsOpen(false)
+                    }
+                    }
+                    className={"bg-[#151515] text-[#fbfada] border border-[#fbfada] rounded-full px-4 py-2 hover:bg-[#fbfada] hover:text-[#151515] transition-all duration-300"} 
+                    >
+                  Sign Up
+                </button>
+              </SignedOut>
+              
+              <SignedIn>
+                <UserButton afterSignOutUrl="/" />
+              </SignedIn>
+            </div>
           </li>
         </ul>
       </div>
