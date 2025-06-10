@@ -13,7 +13,7 @@ const CartItems = ({
   return (
     <div className={`${styling.containerDiv} rounded-3xl `}>
       <div className="w-[200px]">
-        <img className="w-full rounded-3xl" src={img ? img : "../src/assets/brgr-removebg-preview.png"} alt="" />
+        <img className="w-full rounded-3xl" src={img ? img : "../assets/brgr-removebg-preview.png"} alt="" />
       </div>
       <div className={`${styling.contentDiv} py-2`}>
         <h1 className={` bungee text-xl ms-5 text-[#ffc400]`}>{name? name : "Your Customized sandwich"}</h1>
