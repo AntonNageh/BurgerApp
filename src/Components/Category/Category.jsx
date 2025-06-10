@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "./Category.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import burger1 from "../../assets/1-removebg-preview.png";
-import burger2 from "../../assets/brgr-removebg-preview.png";
+import burger2 from "../../assets/defaultburger.png";
 import burger3 from "../../assets/3-removebg-preview.png";
 import burger4 from "../../assets/4-removebg-preview.png";
 import burger5 from "../../assets/5-removebg-preview.png";
