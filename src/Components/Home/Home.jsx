@@ -2,7 +2,7 @@ import React from "react";
 import style from "./Home.module.css";
 import brgr from "../../assets/brgr.png";
 import Category from "../Category/Category";
-import Menu from "../Menu/menu";
+import Menu from "../Menu/Menu";
 import Footer from "../Footer/Footer";
 import About from "../About/About";
 
